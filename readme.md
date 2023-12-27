@@ -20,6 +20,8 @@ Compile the C file with `gcc HiMom.c`
 
 Run the file with `a.exe`
 
+To do both at once, `gcc File.c && a.exe`
+
 # Code
 
 ## Escape sequences
@@ -50,7 +52,7 @@ For numbers types, use `unsigned type = 10;` to disregard negative numbers and d
 
 * String: `char name[] = "Anto";` %s
 
-* Boolean: `bool e = true;` %d (log 1 or 0) / 1 byte / To use them write `#include stdbool.h`
+* Boolean: `bool e = true;` %d (log 1 or 0) / 1 byte / To use them write `#include <stdbool.h>`
 
 
 ## Variables
@@ -65,22 +67,64 @@ For numbers types, use `unsigned type = 10;` to disregard negative numbers and d
 
 ### Format specifiers to print a variable
 
-* %c = character
+* `%c` = character
 
-* %s = string
+* `%s` = string
 
-* %f = float
+* `%f` = float
 
-* %lf = double
+* `%lf` = double
 
-* %d = integer
+* `%d` = integer
 
 To write before the specifier:
 
-* %.1 = decimal precision
+* `%.1` = decimal precision
 
-* %1 = min field with (align to write)
+* `%1` = min field with (align to write)
 
-* %-1 = same (align to right)
+* `%-1` = same (align to right)
 
 [See data types for the %x](#data-types "Goto data-types")
+
+### Constants
+
+`const type PI = 3.14`
+
+Constants are always written full caps
+
+## Operators
+
+* + (addition)
+
+* - (substraction)
+
+* * (multiplication)
+
+* / (division)
+
+* % (modulus)
+
+* ++ (increment)
+
+* -- (decrement)
+
+If we divide two integers, the result will be a float with 0 as it decimals. To solve this, convert the second number to a float with `x / (float) y`
+
+## User input
+
+`scanf("%d", &age);` To get the input WITHOUT spaces, so it's mostly use for numbers
+
+To get with spaces:
+
+```
+#include <string.h>
+
+fgets(var, num of bits, stdin);
+
+name[strlen(name)-1] = '\0';
+```
+
+## Math functions
+
+`#include <math.h>`
